@@ -1,4 +1,4 @@
-const SKILL_ID = '';
+const SKILL_ID = 'amzn1.ask.skill.76c9eaf0-c1ea-428b-ad36-744b62234eb9';
 
 const WELCOME_MSG = ''.concat(
     'Welcome to Universal Containers. ',
@@ -34,8 +34,8 @@ app.set("view engine", "jade");
  */
 
 alexaApp.pre = function(request, response, type) {
-  if (request.applicationId != SKILL_ID) {
-//if (request.sessionDetails.application.applicationId != SKILL_ID) {
+//  if (request.applicationId != SKILL_ID) {
+if (request.sessionDetails.application.applicationId != SKILL_ID) {
     console.log('request.applicationId is: ' + request.applicationId);
     console.log('SKILL_ID is: ' + SKILL_ID);
     // fail ungracefully
